@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+{% block title %}Home · FitLife{% endblock %}
+{% block styles %}<link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">{% endblock %}
+{% block content %}
+<section class="dashboard-header"><div><p class="eyebrow">ÁREA DO ALUNO</p><h1>Olá, {{ user.name }}!</h1><p class="muted">Que bom ter você de volta. Pronto para treinar?</p></div><a class="button primary" href="{{ url_for('profile') }}">Editar perfil</a></section>
+<section class="dashboard-grid"><article class="stat-card dark"><small>STATUS DA CONTA</small><strong>ATIVA</strong><p>Seu acesso está liberado.</p></article><article class="stat-card"><small>PRÓXIMO FOCO</small><strong>CONSISTÊNCIA</strong><p>Pequenos passos todos os dias.</p></article><article class="welcome-card"><span class="big-number">03</span><h2>Hábitos que fortalecem</h2><p>Treine, alimente-se bem e descanse. Seu resultado é construído com constância.</p></article></section>
+{% endblock %}

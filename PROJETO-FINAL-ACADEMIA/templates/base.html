@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}FitLife Academia{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='global.css') }}">
+  {% block styles %}{% endblock %}
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="{{ url_for('index') }}"><span class="brand-mark">F</span> FitLife</a>
+    <nav>
+      {% if session.get('usuario_id') %}
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('profile') }}">Meu perfil</a>
+        <a class="nav-button" href="{{ url_for('logout') }}">Sair</a>
+      {% else %}
+        <a href="{{ url_for('login') }}">Entrar</a>
+        <a class="nav-button" href="{{ url_for('register') }}">Cadastrar</a>
+      {% endif %}
+    </nav>
+  </header>
+  <main class="page-container">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <section class="alerts">
+          {% for category, message in messages %}
+            <div class="alert {{ category }}">{{ message }}</div>
+          {% endfor %}
+        </section>
+      {% endif %}
+    {% endwith %}
+    {% block content %}{% endblock %}
+  </main>
+  <footer>FitLife Academia · Treine hoje, evolua sempre.</footer>
+</body>
+</html>

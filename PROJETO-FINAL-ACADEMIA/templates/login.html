@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block title %}Login · FitLife{% endblock %}
+{% block styles %}<link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">{% endblock %}
+{% block content %}
+<div class="auth-layout single"><section class="form-card"><div class="form-icon">F</div><h2>Bem-vindo de volta</h2><p class="muted">Entre para acessar sua área de aluno.</p><form method="post">
+<label>E-mail<input type="email" name="email" required value="{{ request.form.get('email', '') }}"></label>
+<label>Senha<input type="password" name="password" required></label>
+<button class="button primary full" type="submit">Entrar</button></form><p class="form-link">Ainda não tem conta? <a href="{{ url_for('register') }}">Criar cadastro</a></p></section></div>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}Cadastro · FitLife{% endblock %}
+{% block styles %}<link rel="stylesheet" href="{{ url_for('static', filename='register.css') }}">{% endblock %}
+{% block content %}
+<div class="auth-layout"><section class="auth-intro"><p class="eyebrow">COMECE AGORA</p><h1>Faça parte da FitLife.</h1><p>Crie seu acesso e dê o primeiro passo para uma rotina mais saudável.</p></section>
+<section class="form-card"><h2>Criar cadastro</h2><p class="muted">Preencha seus dados para continuar.</p><form method="post">
+<label>Nome completo<input type="text" name="name" required minlength="3" value="{{ request.form.get('name', '') }}"></label>
+<label>E-mail<input type="email" name="email" required value="{{ request.form.get('email', '') }}"></label>
+<label>Senha<input type="password" name="password" required minlength="8"><small>Mínimo de 8 caracteres, com maiúscula, minúscula, número e símbolo.</small></label>
+<label>Confirme a senha<input type="password" name="password_confirmation" required minlength="8"></label>
+<button class="button primary full" type="submit">Cadastrar</button></form><p class="form-link">Já tem uma conta? <a href="{{ url_for('login') }}">Entrar</a></p></section></div>
+{% endblock %}

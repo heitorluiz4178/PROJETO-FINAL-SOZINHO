@@ -1,0 +1,1 @@
+.auth-layout{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;max-width:900px;margin:20px auto}.auth-intro h1{font-size:60px}@media(max-width:700px){.auth-layout{grid-template-columns:1fr;gap:30px}.auth-intro h1{font-size:44px}}

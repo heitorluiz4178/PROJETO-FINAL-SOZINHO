@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}FitLife Academia{% endblock %}
+{% block styles %}<link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">{% endblock %}
+{% block content %}
+<section class="hero">
+  <div>
+    <p class="eyebrow">FITLIFE ACADEMIA</p>
+    <h1>Seu melhor treino começa aqui.</h1>
+    <p class="hero-text">Uma experiência simples para cuidar do seu corpo, acompanhar sua rotina e alcançar seus objetivos.</p>
+    <div class="actions">
+      <a class="button primary" href="{{ url_for('register') }}">Criar minha conta</a>
+      <a class="button secondary" href="{{ url_for('login') }}">Já sou aluno</a>
+    </div>
+  </div>
+  <div class="hero-card"><span>01</span><strong>Força</strong><small>Consistência transforma resultados.</small></div>
+</section>
+<section class="features">
+  <article><span>01</span><h2>Treino com propósito</h2><p>Organize sua jornada e mantenha o foco no que importa.</p></article>
+  <article><span>02</span><h2>Perfil protegido</h2><p>Seus dados ficam armazenados com segurança no banco de dados.</p></article>
+  <article><span>03</span><h2>Experiência responsiva</h2><p>Acesse pelo computador, tablet ou celular.</p></article>
+</section>
+{% endblock %}

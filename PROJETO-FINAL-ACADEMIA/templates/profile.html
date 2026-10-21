@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}Meu perfil · FitLife{% endblock %}
+{% block styles %}<link rel="stylesheet" href="{{ url_for('static', filename='profile.css') }}">{% endblock %}
+{% block content %}
+<section class="dashboard-header"><div><p class="eyebrow">MINHA CONTA</p><h1>Editar perfil</h1><p class="muted">Atualize seus dados sem alterar o identificador da conta.</p></div></section>
+<section class="form-card profile-card"><form method="post">
+<label>Nome completo<input type="text" name="name" required minlength="3" value="{{ user.name }}"></label>
+<label>E-mail<input type="email" name="email" required value="{{ user.email }}"></label>
+<div class="divider"><span>Alterar senha (opcional)</span></div>
+<label>Nova senha<input type="password" name="new_password" minlength="8"><small>Se preencher, use uma senha forte e diferente das 3 últimas.</small></label>
+<label>Confirme a nova senha<input type="password" name="password_confirmation" minlength="8"></label>
+<button class="button primary full" type="submit">Salvar alterações</button></form></section>
+{% endblock %}
